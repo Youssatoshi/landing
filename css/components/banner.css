@@ -1,0 +1,55 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 620px;
+  }
+
+.banner h1 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: rgba(36, 11, 150, 0.5);
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: medium;
+  margin-top: 350px;
+
+}
+
+.banner p {
+
+  color: white;
+  background-color: rgba(52, 20, 156, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  font-size: small;
+
+}
+
+.banner h1, .banner p {
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes floatDrift {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-5px, -5px);
+  }
+  50% {
+    transform: translate(5px, -10px);
+  }
+  75% {
+    transform: translate(-5px, 5px);
+  }
+}
+
+.banner h1, .banner p {
+  animation: floatDrift 6s ease-in-out infinite;
+}

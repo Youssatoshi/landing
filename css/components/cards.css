@@ -1,0 +1,103 @@
+@keyframes cardMoveUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Move up */
+  }
+}
+
+@keyframes cardMoveDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px); /* Move down */
+  }
+}
+
+.card img {
+  width: 200px;
+}
+
+.card p {
+  opacity: 0.7;
+  font-size: small;
+  color: black;
+  font-weight: 600;
+}
+
+.container h2 {
+  color: white;
+  background-color: rgba(52, 20, 156, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  font-size: small;
+
+  animation: moveHorizontal 5s linear infinite; /* Adjust duration (5s) as needed */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide text that overflows the container */
+  position: relative;
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(150%); /* Start off-screen to the right */
+  }
+  100% {
+    transform: translateX(-150%); /* Move off-screen to the left */
+  }
+}
+
+.card {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #d00b7e5a;
+  font-size: smaller;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:nth-child(odd) {
+  animation: cardMoveUp 2s infinite ease-in-out; /* Cards with odd index move up */
+}
+
+.card:nth-child(even) {
+  animation: cardMoveDown 2s infinite ease-in-out; /* Cards with even index move down */
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  }
+
+@media (max-width: 900px) {
+  .card {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    justify-content: space-around;
+  }
+}
+
+body {
+  background-color: rgba(79, 11, 79, 0.164);
+}
+
+.container h2 {
+  max-width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
